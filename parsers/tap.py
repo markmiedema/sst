@@ -3,7 +3,7 @@ import pdfplumber, pandas as pd
 from typing import List
 from .preprocessor import SSTDataPreprocessor
 
-class TAPPDFParser:
+class TAPParser:
     """Extracts tables from TAP PDF and returns list[pd.DataFrame]."""
 
     SETTINGS = dict(

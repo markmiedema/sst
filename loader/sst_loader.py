@@ -15,8 +15,8 @@ class SSTDatabaseLoader:
     def __init__(self, conn: connection):
         self.conn = conn
         self.lod = sst_lod.LODParser("LOD")
-        # This line is now fixed with the correct class name
-        self.tap = sst_tap.TAPPDFParser("TAP") 
+        # Use TAPParser for consistency
+        self.tap = sst_tap.TAPParser("TAP") 
         self.cert = sst_certs.CertParser("COC")
 
     def load_combined(self, csv_path: Path, doc_type: str,
