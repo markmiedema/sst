@@ -1,21 +1,21 @@
-# Environment variables - NEVER commit these!
+# Environment variables
 .env
 .env.local
-.env.production
-
-# Database credentials and secrets
-*.key
-*.pem
-secrets/
+.env.*.local
 
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
 *.so
-*.egg
-*.egg-info/
-dist/
-build/
+.Python
+.venv/
+venv/
+ENV/
+
+# Logs
+logs/
+*.log
 
 # IDE
 .vscode/
@@ -23,10 +23,12 @@ build/
 *.swp
 *.swo
 
-# Logs
-logs/
-*.log
-
 # OS
 .DS_Store
 Thumbs.db
+
+# Project specific
+*.db
+*.sqlite
+backups/
+temp/
