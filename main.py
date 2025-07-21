@@ -67,6 +67,8 @@ def main():
 
             # Mark as completed if successful
             mark_status(conn, state_code, doc_type, version_hint, file_hash, "completed", rows=rows_loaded)
+            # Commit the transaction to persist the data
+            conn.commit()
             logger.info(f"Successfully loaded {rows_loaded} rows from {file_path}.")
 
         except Exception as exc:
