@@ -57,7 +57,7 @@ file_hash    = sha256(FILE)
 
 try:
     mark_status(conn, state_code, doc_type, version_hint, file_hash, "started")
-    loader.load_combined(FILE, doc_type, state_code, state_name)
+    loader.load_combined(FILE, doc_type, state_code, state_name, version_hint)
     mark_status(conn, state_code, doc_type, version_hint, file_hash,
                 "completed", rows=1)
     print(f"✓ Loaded {doc_type} {state_code} {version_hint}")
