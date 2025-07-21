@@ -1,0 +1,6 @@
+{
+  "python.defaultInterpreterPath": "D:\\sst\\.venv\\Scripts\\python.exe",
+  "python.envFile": "${workspaceFolder}\\.env",
+  "editor.tabSize": 4,
+  "files.exclude": { "**/__pycache__": true }
+}
