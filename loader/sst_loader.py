@@ -14,9 +14,9 @@ from parsers import tap as sst_tap
 class SSTDatabaseLoader:
     def __init__(self, conn: connection):
         self.conn = conn
-        # This section is now fixed, providing the required 'pre' argument
         self.lod = sst_lod.LODParser("LOD")
-        self.tap = sst_tap.TAPParser("TAP")
+        # This line is now fixed with the correct class name
+        self.tap = sst_tap.TAPPDFParser("TAP") 
         self.cert = sst_certs.CertParser("COC")
 
     def load_combined(self, csv_path: Path, doc_type: str,
