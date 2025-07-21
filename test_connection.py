@@ -1,16 +1,12 @@
 # D:\sst\test_connection.py
-import psycopg2
 import sys
+from config import get_connection
 
-# Use the full, direct connection string for the IPv4 pooler
-# The asterisk (*) in the password has been URL-encoded to %2A
-DB_URL = "postgresql://postgres.yixxvtnynvthxnpdgsro:Smeads0225%2A@aws-0-us-east-2.pooler.supabase.com:5432/postgres?sslmode=require"
-
-print("Attempting to connect to Supabase...")
+print("Attempting to connect to database using centralized configuration...")
 
 try:
-    # Try to connect
-    connection = psycopg2.connect(DB_URL)
+    # Try to connect using centralized config
+    connection = get_connection()
 
     # Create a cursor to execute a test query
     cursor = connection.cursor()
