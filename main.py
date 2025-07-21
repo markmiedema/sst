@@ -15,7 +15,7 @@ If you omit arguments it falls back to the hard‑coded EXAMPLE_FILE below.
 from pathlib import Path
 import sys, hashlib
 from dotenv import load_dotenv
-from loader.db import get_connection          # helper that reads .env
+from config import get_connection          # helper that reads .env
 from loader.sst_loader import SSTDatabaseLoader
 from loader.change_detector import mark_status
 from config import get_doc_type, get_state_name

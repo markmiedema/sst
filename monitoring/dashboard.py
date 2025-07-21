@@ -241,7 +241,7 @@ class LoadingRecovery:
 # CLI tool for monitoring
 if __name__ == "__main__":
     import argparse
-    from loader.db import get_connection
+    from config import get_connection
     
     parser = argparse.ArgumentParser(description="SST Loading Monitor")
     parser.add_argument('command', choices=['summary', 'failed', 'performance', 'retry'])

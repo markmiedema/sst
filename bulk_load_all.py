@@ -13,7 +13,7 @@ Run with the venv active:
 from pathlib import Path
 import json, hashlib, sys
 from dotenv import load_dotenv
-from loader.db import get_connection
+from config import get_connection
 from loader.sst_loader import SSTDatabaseLoader
 from loader.change_detector import mark_status
 
