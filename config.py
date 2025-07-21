@@ -1,12 +1,43 @@
 # config.py - Centralized configuration management
 import os
+import json
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Dict
 from dataclasses import dataclass
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
+
+# Document type mapping
+DOC_MAP = {"tm": "LOD", "tap": "TAP", "cc": "CERT"}
+
+# Load state names from JSON file
+def _load_state_names() -> Dict[str, str]:
+    """Load state names from config file."""
+    config_path = Path(__file__).parent / "config" / "state_names.json"
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        # Fallback to hardcoded mapping
+        return {
+            'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas',
+            'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware',
+            'FL': 'Florida', 'GA': 'Georgia', 'HI': 'Hawaii', 'ID': 'Idaho',
+            'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa', 'KS': 'Kansas',
+            'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland',
+            'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi',
+            'MO': 'Missouri', 'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada',
+            'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NY': 'New York',
+            'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio', 'OK': 'Oklahoma',
+            'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina',
+            'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah',
+            'VT': 'Vermont', 'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia',
+            'WI': 'Wisconsin', 'WY': 'Wyoming'
+        }
+
+STATE_NAMES = _load_state_names()
 
 @dataclass
 class DatabaseConfig:
@@ -141,3 +172,11 @@ def get_data_lake_path() -> Path:
 def get_log_dir() -> Path:
     """Get log directory from config."""
     return config.loading.log_dir
+
+def get_doc_type(folder_key: str) -> str:
+    """Get document type from folder key."""
+    return DOC_MAP.get(folder_key.lower(), folder_key.upper())
+
+def get_state_name(state_code: str) -> str:
+    """Get full state name from state code."""
+    return STATE_NAMES.get(state_code.upper(), state_code)

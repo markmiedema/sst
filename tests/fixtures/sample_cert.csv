@@ -1,0 +1,4 @@
+question_number,question_text,answer,citation,notes,section,compliance_met
+1,"Does the state have a sales tax?",Yes,State Code 123.45,Valid as of 2024,General,true
+2,"Are services subject to tax?",No,State Code 123.46,Certain exceptions apply,Services,false
+3,"Is there a use tax?",Yes,State Code 123.47,Applies to out-of-state purchases,Use Tax,true

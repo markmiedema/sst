@@ -1,0 +1,5 @@
+item_type,code,description,taxable,exempt,threshold
+admin_definition,ADM001,Administrative code for general use,true,false,
+product_definition,PRD002,Food products for consumption,false,true,
+holiday_item,HOL003,Back to school clothing,true,false,100.00
+product_definition,PRD004,Medical equipment and supplies,false,true,

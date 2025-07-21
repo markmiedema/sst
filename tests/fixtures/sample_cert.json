@@ -1,0 +1,22 @@
+{
+  "cert_items": [
+    {
+      "question_number": "1",
+      "question_text": "Does the state have a sales tax?",
+      "answer": "Yes",
+      "citation": "State Code 123.45",
+      "notes": "Valid as of 2024",
+      "section": "General",
+      "compliance_met": true
+    },
+    {
+      "question_number": "2", 
+      "question_text": "Are services subject to tax?",
+      "answer": "No",
+      "citation": "State Code 123.46",
+      "notes": "Certain exceptions apply",
+      "section": "Services",
+      "compliance_met": false
+    }
+  ]
+}

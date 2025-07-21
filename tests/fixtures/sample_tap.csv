@@ -1,0 +1,4 @@
+question_number,question_text,answer,citation,notes,group_name,compliance_met
+T1,"What is the standard audit period?","3 years","TAP-AUD-001","Standard lookback period","Audit Practices",true
+T2,"Are electronic records acceptable?","Yes","TAP-REC-002","Must be readable and accessible","Record Keeping",true
+T3,"Is there a voluntary disclosure program?","Yes","TAP-VDA-003","Available for qualifying taxpayers","Voluntary Disclosure",true

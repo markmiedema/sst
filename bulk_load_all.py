@@ -37,7 +37,7 @@ for folder_key, doc_type in DOC_MAP.items():
 
     for state_dir in base.glob("state=*"):
         state_code = state_dir.name.split("=", 1)[1].upper()
-        state_name = STATE_NAMES.get(state_code, state_code)
+        state_name = get_state_name(state_code)
 
         for f in state_dir.glob("*.csv"):
             ver = f.stem.split("_")[2]                    # v2024.0
